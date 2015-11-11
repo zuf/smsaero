@@ -21,11 +21,12 @@ class Smsaero::API
         result[:balance]
     end
 
-    def send(to, from, text, date=-1)
+    def send(to, from, text, type=2, date=-1)
         params = {
             "to"    => to,
             "from"  => from,
             "text"  => text,
+            "type"  => type,
         }
         params["date"] = date if date > 0
 

@@ -46,12 +46,13 @@ class Smsaero::CLI < Thor
     method_option :to,   :aliases => "-t", :type => :numeric, :required => true
     method_option :from, :aliases => "-f", :type => :string, :required => true
     method_option :text, :aliases => "-m", :type => :string, :required => true
+    method_option :type, :aliases => "-b", :type => :numeric, :default => 2
     method_option :date, :aliases => "-d", :type => :numeric, :banner => "unix time"
     def message
         if options.has_key?(:date)
-            say @sms.send(options[:to], options[:from], options[:text], options[:date])
+            say @sms.send(options[:to], options[:from], options[:text], options[:type] options[:date])
         else
-            say @sms.send(options[:to], options[:from], options[:text])
+            say @sms.send(options[:to], options[:from], options[:text], options[:type])
         end
     end
 end
