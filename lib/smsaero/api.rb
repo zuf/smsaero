@@ -3,7 +3,7 @@ require "digest/md5"
 require "json"
 
 class Smsaero::API
-    API_URL = "http://gate.smsaero.ru/"
+    API_URL = "https://gate.smsaero.ru/"
     attr_reader :user, :password
     attr_writer :user
 
